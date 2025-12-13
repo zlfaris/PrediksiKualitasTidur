@@ -34,7 +34,7 @@ with st.form("form_prediksi"):
 
     umur = st.number_input(
         "Umur (Tahun)",
-        min_value=10,
+        min_value=1,
         max_value=100,
         value=25
     )
