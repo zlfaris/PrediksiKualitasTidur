@@ -139,10 +139,11 @@ if submit:
     st.subheader("Hasil Prediksi")
 
     st.markdown(
-        f"""
-        ### Prediksi Tingkat Kualitas Tidur Anda (Skala 1–10):
-        {prediksi}/10
-        """
+    f"""
+    ### Prediksi Tingkat Kualitas Tidur Anda (Skala 1–10):
+    <span style="font-weight:600;">{prediksi}/10</span>
+    """,
+    unsafe_allow_html=True
     )
 
     # Progress bar
@@ -152,10 +153,10 @@ if submit:
 
     # Interpretasi
     if prediksi >= 8:
-        st.success("Kualitas tidur Anda tergolong *sangat baik*.")
+        st.success("Kualitas tidur Anda tergolong sangat baik.")
     elif prediksi >= 6:
-        st.info("Kualitas tidur Anda tergolong *cukup baik*.")
+        st.info("Kualitas tidur Anda tergolong cukup baik.")
     elif prediksi >= 4:
-        st.warning("Kualitas tidur Anda tergolong *kurang*.")
+        st.warning("Kualitas tidur Anda tergolong kurang.")
     else:
-        st.error("Kualitas tidur Anda tergolong *buruk*.")
+        st.error("Kualitas tidur Anda tergolong buruk.")
