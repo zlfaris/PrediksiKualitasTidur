@@ -147,7 +147,7 @@ if submit:
     )
 
     # Progress bar
-    st.markdown("#### Kualitas Tidur")
+    st.markdown("#### Tingkat Kualitas Tidur")
     st.progress(min(prediksi / 10, 1.0))
     st.caption(f"{int(prediksi * 10)}%")
 
