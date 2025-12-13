@@ -99,12 +99,19 @@ with st.form("form_prediksi"):
 
 # PROSES PREDIKSI
 if submit:
-    # Encoding gender
-    gender_encoded = gender_encoder.transform([gender_label])[0]
+    # FIX FINAL: Encoding gender (UI → Dataset)
+    gender_mapping = {
+        "Laki-Laki": "Male",
+        "Perempuan": "Female"
+    }
+    gender_encoded = gender_encoder.transform(
+        [gender_mapping[gender_label]]
+    )[0]
 
     # Mapping BMI UI → Dataset
     bmi_mapping = {
         "Berat Badan Normal": "Normal",
+        "Berat Badan Normal": "Normal Weight",
         "Kelebihan Berat Badan": "Overweight",
         "Obesitas": "Obese"
     }
