@@ -153,10 +153,10 @@ if submit:
 
     # Interpretasi
     if prediksi >= 8:
-        st.success("Kualitas tidur Anda tergolong sangat baik.")
+        st.success("Kualitas Tidur Anda Tergolong Sangat Baik.")
     elif prediksi >= 6:
-        st.info("Kualitas tidur Anda tergolong cukup baik.")
+        st.info("Kualitas Tidur Anda Tergolong Cukup Baik.")
     elif prediksi >= 4:
-        st.warning("Kualitas tidur Anda tergolong kurang.")
+        st.warning("Kualitas Tidur Anda Tergolong Kurang.")
     else:
-        st.error("Kualitas tidur Anda tergolong buruk.")
+        st.error("Kualitas Tidur Anda Tergolong Buruk.")
