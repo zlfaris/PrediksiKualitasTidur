@@ -3,29 +3,23 @@ import pandas as pd
 import numpy as np
 import joblib
 
-# ================================
 # LOAD MODEL & FILE DARI COLAB
-# ================================
 model = joblib.load("rf_quality_sleep_model.pkl")
 fitur_prediktor = joblib.load("fitur_prediktor.pkl")
 gender_encoder = joblib.load("gender_encoder.pkl")
 bmi_encoder = joblib.load("bmi_encoder.pkl")
 
-# ================================
 # KONFIGURASI HALAMAN
-# ================================
 st.set_page_config(
     page_title="Prediksi Kualitas Tidur",
-    page_icon="😴",
+    page_icon="",
     layout="centered"
 )
 
-# ================================
 # HEADER
-# ================================
 st.markdown(
     """
-    <h2 style='text-align:center;'>😴 Prediksi Kualitas Tidur</h2>
+    <h2 style='text-align:center;'>Prediksi Kualitas Tidur</h2>
     <p style='text-align:center; color:gray;'>
     Berdasarkan Parameter Kesehatan dan Gaya Hidup
     </p>
@@ -34,11 +28,9 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# ================================
 # FORM INPUT USER
-# ================================
 with st.form("form_prediksi"):
-    st.subheader("📝 Data Pengguna")
+    st.subheader("Data Pengguna")
 
     umur = st.number_input(
         "Umur (Tahun)",
@@ -103,11 +95,9 @@ with st.form("form_prediksi"):
         value=80
     )
 
-    submit = st.form_submit_button("🔍 Prediksi Kualitas Tidur")
+    submit = st.form_submit_button("Prediksi Kualitas Tidur")
 
-# ================================
 # PROSES PREDIKSI
-# ================================
 if submit:
     # Encoding gender
     gender_encoded = gender_encoder.transform([gender_label])[0]
@@ -141,12 +131,12 @@ if submit:
     # OUTPUT HASIL (FORMAT FINAL)
     # ================================
     st.markdown("<hr>", unsafe_allow_html=True)
-    st.subheader("📊 Hasil Prediksi")
+    st.subheader("Hasil Prediksi")
 
     st.markdown(
         f"""
         ### Prediksi Tingkat Kualitas Tidur Anda (Skala 1–10):
-        *{prediksi}/10*
+        {prediksi}/10
         """
     )
 
@@ -157,11 +147,11 @@ if submit:
 
     # Interpretasi
     if prediksi >= 8:
-        st.success("Kualitas tidur Anda tergolong *sangat baik*.")
+        st.success("Kualitas tidur Anda tergolong sangat baik.")
     elif prediksi >= 6:
-        st.info("Kualitas tidur Anda tergolong *cukup baik*.")
+        st.info("Kualitas tidur Anda tergolong cukup baik.")
     elif prediksi >= 4:
-        st.warning("Kualitas tidur Anda tergolong *kurang*.")
+        st.warning("Kualitas tidur Anda tergolong kurang.")
     else:
-        st.error("Kualitas tidur Anda tergolong *buruk*.")
+        st.error("Kualitas tidur Anda tergolong buruk.")
       
