@@ -41,7 +41,7 @@ with st.form("form_prediksi"):
 
     gender_label = st.selectbox(
         "Jenis Kelamin",
-        ["Male", "Female"]
+        ["Laki-Laki", "Perempuan"]
     )
 
     aktivitas = st.number_input(
@@ -127,16 +127,13 @@ if submit:
     prediksi = model.predict(input_data)[0]
     prediksi = round(float(prediksi), 2)
 
-    # ================================
-    # OUTPUT HASIL (FORMAT FINAL)
-    # ================================
+    # OUTPUT HASIL
     st.markdown("<hr>", unsafe_allow_html=True)
     st.subheader("Hasil Prediksi")
 
     st.markdown(
         f"""
-        ### Prediksi Tingkat Kualitas Tidur Anda (Skala 1–10):
-        {prediksi}/10
+        ### Prediksi Tingkat Kualitas Tidur Anda (Skala 1–10): {prediksi}/10
         """
     )
 
