@@ -45,9 +45,9 @@ with st.form("form_prediksi"):
     )
 
     aktivitas = st.number_input(
-        "Tingkat Aktivitas Fisik (menit/hari) [0–100]",
+        "Tingkat Aktivitas Fisik (menit/hari)",
         min_value=0,
-        max_value=100,
+        max_value=200,
         value=30
     )
 
