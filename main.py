@@ -19,17 +19,14 @@ st.set_page_config(
 # HEADER
 st.markdown(
     """
-    <div style="text-align:center;">
-        <h2 style="margin-bottom:4px;">Prediksi Kualitas Tidur</h2>
-        <p style="margin-top:0; color:gray;">
-            Berdasarkan Parameter Kesehatan dan Gaya Hidup
-        </p>
-    </div>
+    <h2 style='text-align:center;'>Prediksi Kualitas Tidur</h2>
+    <p style='text-align:center; color:gray;'>
+    Berdasarkan Parameter Kesehatan dan Gaya Hidup
+    </p>
     <hr>
     """,
     unsafe_allow_html=True
 )
-
 
 # FORM INPUT USER
 with st.form("form_prediksi"):
