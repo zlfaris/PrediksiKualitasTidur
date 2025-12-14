@@ -11,7 +11,7 @@ bmi_encoder = joblib.load("bmi_encoder.pkl")
 
 # KONFIGURASI HALAMAN
 st.set_page_config(
-    page_title="Prediksi Kualitas Tidur",
+    page_title="Prediksi Tingkat Kualitas Tidur",
     page_icon="",
     layout="centered"
 )
