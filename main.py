@@ -19,7 +19,7 @@ st.set_page_config(
 # HEADER
 st.markdown(
     """
-    <h2 style='text-align:center;'>Prediksi Kualitas Tidur</h2>
+    <h2 style='text-align:center;'>Prediksi Tingkat Kualitas Tidur</h2>
     <p style='text-align:center; color:gray;'>
     Berdasarkan Parameter Kesehatan dan Gaya Hidup
     </p>
